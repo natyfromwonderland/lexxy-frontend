@@ -1,0 +1,90 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+    
+<!-- /container fluid-->  
+
+<div class="container">
+  <div class="col-sm-8">
+
+<section id="about" *ngIf="auth.user$ | async as user" (onload)="getUserDetails(userDetails)" >
+    <div class="name" >
+        <h1>{{user.nickname| uppercase}}</h1>
+
+
+    </div>
+    
+      <div class="row flex-row-reverse">
+          <div class="col-lg-6 upper">
+            <div class = "profile-info" style = "margin-bottom: 40px;">
+                  <div class="row about-list" style="margin-right: 60px;">
+                   
+                    
+
+                      <div class="col-md-6">
+                          <div class="media">
+                              <label>E-mail</label>
+                              <p>{{user.email}}</p>
+                          </div><br>
+                          
+                      </div>
+                  </div>
+                  <div class="counter" >
+                    <div class="stats">
+                        <div class="col-6 col-lg-3 item-3">
+                            <div class="count-data ">
+                                <i class="bi bi-trophy-fill" style="font-size: 4rem; color: #D84190; padding: 5px; margin-right: 10px;"></i>
+                                <h6 class="count h2" data-to="500" data-speed="500" >{{userDetails.level}}</h6>
+                                <h6 *ngIf = "userDetails.level==null" class="count h2" data-to="500" data-speed="500" >0</h6>
+                                
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3 item-1" >
+                            <div class="count-data ">
+                                <i class="bi bi-piggy-bank-fill" style="font-size: 4rem; color: #D84190; margin-right: 10px;"></i>
+                                <h6 class="count h2" data-to="500" data-speed="500">{{userDetails.coins}}</h6>
+                                <h6 *ngIf = "userDetails.coins==null" class="count h2" data-to="500" data-speed="500">0</h6>
+                               
+                            </div>
+                        </div>
+                       
+                        
+                    </div>
+                </div>
+                </div>
+          </div>
+          <div class="col-lg-6">
+              <div class="about-avatar">
+                  <img [src]="img ? img : '../../assets/img-other/avatar.svg'" title="" alt="default avatar" style = "max-width: 160px;">    
+              </div>
+          </div>
+      </div>
+     
+    <div class="about-text go-to">
+        <a routerLink="/languages"
+       class="nav-link"
+       routerLinkActive="router-link-exact-active"><h3 class="dark-color" 
+       style = "margin-left: 10px; margin-top: 30px; text-decoration-line: underline; color: #FFA0A1; font-family: Prompt; font-size: 24px;">What will you learn today?</h3></a>
+
+    </div>
+  
+<div class="container" >
+    <h1>Ranking</h1>
+    <div class="leader" *ngFor="let leader of leaders" style = "color: #28344E;">
+        <div class = "item">
+            <div class = "left" style = "float: left; padding: 10px;"><p style = "color: #28344E;; ">{{leader.username}}</p></div>
+            <div class = "right" style = "float: right; padding: 10px; align-self: flex-end; min-width: 50px;"><p style = "color: #D84190;">{{leader.coins}}</p></div>
+            <hr class="solid">
+        </div>
+        
+    </div>
+
+</div>
+
+
+</section>
+
+</div>
+</div>

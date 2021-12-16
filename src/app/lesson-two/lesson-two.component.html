@@ -1,0 +1,15 @@
+
+<div class = "container">
+  <h1 style = "font-family: 'Luckiest Guy'; margin-bottom: 40px;">Align the words below with the images!</h1>
+  <div class = "tasks" >
+    <img src = "../../assets/img-other/trousers.svg">
+    <img src = "../../assets/img-other/dress.svg">
+    <img src = "../../assets/img-other/shirt.svg">
+  </div><br>
+
+<div cdkDropList cdkDropListOrientation="horizontal" class="example-list" (cdkDropListDropped)="drop($event)">
+  
+  <div class="example-box" *ngFor="let answer of answers" cdkDrag>{{answer}}</div>
+</div><br>
+<app-next-button (click)="moveNext()"></app-next-button>
+</div>

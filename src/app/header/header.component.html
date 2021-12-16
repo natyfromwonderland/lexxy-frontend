@@ -1,0 +1,39 @@
+<div class="navbar-nav">
+  
+    <div class="menu" >
+
+      <div class="nav-item" style="float: left;">
+        <a
+        routerLink="/"
+        class="nav-link"
+        routerLinkActive="router-link-exact-active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >
+        </a>
+      </div>
+    <div class="nav-item">
+      <a
+        routerLink="/pupil/profile"
+        class="nav-link"
+        routerLinkActive="router-link-exact-active"
+      >
+      <i class="bi bi-person-fill" style="font-size: 2rem; min-width: 50px; color: #FFA0A1; justify-content: space-between; margin-right: 20px;"></i>
+      </a>
+    </div>
+
+    <div class="nav-item">
+      <a
+        routerLink="/shop"
+        class="nav-link"
+        routerLinkActive="router-link-exact-active"
+      >
+      <i class="bi bi-basket3-fill" style="font-size: 2rem; min-width: 50px; color: #FFA0A1; justify-content: space-between; margin-right: 20px;"></i>
+      </a>
+    </div>
+    
+
+    <div class="nav-item">
+      <app-auth-button ></app-auth-button>
+  </div>
+  
+  </div>

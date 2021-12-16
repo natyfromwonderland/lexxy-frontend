@@ -1,0 +1,6 @@
+<div class="container" >
+    <div class="language" *ngFor="let lesson of lessons" (click)="goToLesson(lesson.id)">
+        <p style = "color: #28344E; font-family: 'Luckiest Guy';">{{lesson.name}}</p>
+        <hr class="solid">
+    </div>
+</div>

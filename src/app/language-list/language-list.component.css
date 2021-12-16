@@ -1,0 +1,29 @@
+.container{
+
+    padding: 20px;
+    max-width: 700px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+   
+}
+
+.language{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    align-content: center;
+}
+
+select{
+    min-width: 100px;
+}
+
+.input-group{
+    font-family: Prompt;
+    color: #28344E;
+    position: relative;
+    min-width: 100px;
+    max-height: fit-content;
+}

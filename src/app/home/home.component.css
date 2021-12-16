@@ -1,0 +1,33 @@
+img{
+    max-width: 940px;
+    display: block;
+    margin-left: 50px;
+    margin-right: auto;
+    width:60%;
+    margin-bottom: 10px;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1{
+    font-family: 'Luckiest Guy';
+    font-size: 36px;
+    line-height: 34px;
+    margin-bottom: 10px;
+}
+
+p{
+    font-family: Prompt;
+}
+
+/* .greeting{
+    margin-right: 100px;
+} */

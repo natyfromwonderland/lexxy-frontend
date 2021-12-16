@@ -1,0 +1,55 @@
+h1{
+    font-family: "Luckiest Guy";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 32px;
+    color: #D84190;
+    margin-bottom: 40px;
+    margin-top: 40px;
+  }
+
+p, h6{
+  font-family: Prompt;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 30px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+label{
+  font-family: Prompt;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 32px;
+    color: #D84190;
+    margin-bottom: 20px;
+}
+
+.col-lg-3{
+  display:flex;
+  flex-direction: row;
+}
+
+.leader{
+  display: flex;
+  max-width: 500px;
+  background-color: rgba(255, 255, 255, 0.8);
+  align-content: center;
+}
+
+.item{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.count-data{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 40px;
+}

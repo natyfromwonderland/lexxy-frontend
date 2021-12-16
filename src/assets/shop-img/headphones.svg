@@ -1,0 +1,16 @@
+<svg width="358" height="358" viewBox="0 0 358 358" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="179" cy="179" r="179" fill="#FFEAF9"/>
+<circle cx="179" cy="206" r="71" fill="#7E819A"/>
+<circle cx="143.278" cy="100.278" r="14.5" transform="rotate(-18.0425 143.278 100.278)" fill="#7E819A"/>
+<ellipse cx="156.906" cy="142.114" rx="9.5" ry="39.5" transform="rotate(-18.0425 156.906 142.114)" fill="#7E819A"/>
+<circle cx="231.059" cy="100.451" r="14.5" transform="rotate(19.1267 231.059 100.451)" fill="#7E819A"/>
+<ellipse cx="216.642" cy="142.022" rx="9.5" ry="39.5" transform="rotate(19.1267 216.642 142.022)" fill="#7E819A"/>
+<ellipse cx="144" cy="197" rx="14" ry="22" fill="white"/>
+<circle cx="144.5" cy="206.5" r="10.5" fill="black"/>
+<ellipse cx="193" cy="197" rx="14" ry="22" fill="white"/>
+<circle cx="193.5" cy="206.5" r="10.5" fill="black"/>
+<path d="M164.296 252.739C179.211 263.585 198.112 257.636 207.826 243.065" stroke="black" stroke-width="5" stroke-linecap="round"/>
+<rect x="244" y="164" width="42" height="77" rx="10" fill="#5FA766"/>
+<rect x="70" y="164" width="42" height="77" rx="10" fill="#5FA766"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M91.0056 188C91.0019 187.667 91 187.334 91 187C91 138.951 129.951 100 178 100C226.049 100 265 138.951 265 187C265 187.334 264.998 187.667 264.994 188H248.998C248.999 187.833 249 187.667 249 187.5C249 148.012 216.988 116 177.5 116C138.012 116 106 148.012 106 187.5C106 187.667 106.001 187.833 106.002 188H91.0056Z" fill="#5FA766"/>
+</svg>

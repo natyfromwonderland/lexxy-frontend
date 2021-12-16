@@ -1,0 +1,6 @@
+{
+    "domain": "dev-4oxazovc.eu.auth0.com",
+    "clientId": "vKq1Swlmq7qxcPw5XzgPFi4YkVpzfmfY",
+    "audience" :"https://lexxy.app",
+    "serverUrl": "http://localhost:8000"
+  }
