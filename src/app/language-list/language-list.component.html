@@ -2,9 +2,9 @@
     <h1 style = " color: #D7408F; font-family: 'Luckiest Guy'; font-size: 30px;">What I'm learning</h1><br>
     <div class="language" *ngFor="let lang of languages" (click)="goToLessons(lang.id)">
         <h1 style = " color: #28344E; font-family: 'Luckiest Guy';">{{lang.name}}</h1>
-        <button style = "border-style: none; background: none; margin-left: 200px;" 
+        <button style = "border-style: none; background: none;" 
         (click)="removeLang(lang.id)">
-            <i class="bi bi-trash-fill" style="font-size: 2rem; min-width: 50px; color: #FFA0A1; justify-content: space-between; margin-left: 20px;"></i>
+            <i class="bi bi-trash-fill" style="font-size: 2rem; min-width: 50px; color: #FFA0A1; margin-left: 70px;"></i>
         </button>
         <hr class="solid" >
     </div><br>
@@ -12,7 +12,7 @@
     <form (ngSubmit)="addLang(name)">
         <div class="form-group" style = "min-width: 200px;">
           <div class="input-group">
-            <select name="name" (ngModel)="name" style= "margin-right: 20px;" (change)="dataChanged($event)">
+            <select name="name" (ngModel)="name" (change)="dataChanged($event)">
             <option *ngFor="let lang of langsAvailable" value="{{lang.name}}">
                 <p style = "color: #28344E; font-family: Prompt;">{{lang.name}}</p></option>
             </select>
@@ -20,9 +20,7 @@
             style = "background-color: #FFA0A1;
             color: #633188;
             border-style: none;
-            font-family: 'Roboto';
-            margin-top: 40px;
-            margin-left: 20px;">Add</button>
+            font-family: 'Roboto';">Add</button>
           </div>
         </div>
       </form>
