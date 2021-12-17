@@ -1,20 +1,18 @@
 <div class = "container">
-<ul *ngFor="let question of questions, index as questionIndex">
+<div class = "questions" *ngFor = "let question of questions, let questionIndex = index">
+<label style = "color: #28344E;">{{question.question}}</label>
+<div class="form-group" *ngFor = "let option of question.options" style = "color: #28344E; margin-right: 20px;">
+    <div class="radio" >
+        <label >
+            <input type="radio" name="option" value="option" (change)="onItemChange(option)">
+           {{option}}
+        </label>
+    </div>
+    <p *ngIf = "option !== question.answer && isSelected" style = "color: #FFA0A1;">Try again!</p>
+</div>
 
-<li class = "questions">
-<h1 style = "color: #28344E;">{{question.question}}</h1>
-<p style = "color: #28344E;" *ngFor="let option of question.options">
-    <input class="form-check-input"
-    [(ngModel)]="option.valueOf"
-     (change)="onItemChange(option.valueOf)"
-      type="radio"
-      value="option" > {{option}}
-  </p>
-  <p *ngIf="!isCorrect" style = "color: #FFA0A1; font-size: 20px;">Try again!</p>
-  <hr class="solid">
-</li>
-
-</ul><br>
+<hr class="solid">
+</div>
 <app-next-button (click)="updateCns(); moveNext()"></app-next-button>
 </div>
 

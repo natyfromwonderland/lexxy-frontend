@@ -57,7 +57,7 @@
           </div>
           <div class="col-lg-6">
               <div class="about-avatar">
-                  <img [src]="img ? img : '../../assets/img-other/avatar.svg'" title="" alt="default avatar" style = "max-width: 160px;">    
+                  <img [src]="img$ ? img$: '../../assets/img-other/avatar.svg'"  class = "avatar" style = "max-width: 160px;">    
               </div>
           </div>
       </div>
@@ -71,11 +71,11 @@
     </div>
   
 <div class="container" >
-    <h1>Ranking</h1>
-    <div class="leader" *ngFor="let leader of leaders" style = "color: #28344E;">
-        <div class = "item">
+    <h1>Leaderboard</h1>
+    <div class="leader" *ngFor="let leader of leaders" style = "color: #28344E; ">
+        <div class = "item" style = "margin-top: 10px;">
             <div class = "left" style = "float: left; padding: 10px;"><p style = "color: #28344E;; ">{{leader.username}}</p></div>
-            <div class = "right" style = "float: right; padding: 10px; align-self: flex-end; min-width: 50px;"><p style = "color: #D84190;">{{leader.coins}}</p></div>
+            <div class = "right" style = "float: right; padding: 10px; margin-left: 250px;"><p style = "color: #D84190;">{{leader.coins}} coins</p></div>
             <hr class="solid">
         </div>
         

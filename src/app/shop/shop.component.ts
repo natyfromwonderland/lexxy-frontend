@@ -20,6 +20,9 @@ export class ShopComponent implements OnInit, AfterViewInit {
   item3!: ShopItem;
   img:any;
   isImageLoading: boolean = false;
+  url1: string = "../../assets/shop-img/cosmic.svg";
+  url2: string = "../../assets/shop-img/headphones.svg";
+  url3: string = "../../assets/shop-img/girly.svg";
 
   constructor(private elementRef: ElementRef, private pupilService: PupilService, 
     private shopService: ShopItemService, private router: Router, private imageService: AvatarService) { }
@@ -29,6 +32,7 @@ export class ShopComponent implements OnInit, AfterViewInit {
     this.pupilService.getPupilByUsername(JSON.parse(localStorage.getItem('profile')!).email).subscribe(
       (data) => {
         this.pupil$=data;
+        this.pupil$.email=data.email;
       });
       this.shopService.getItemById(1).subscribe(
         result => {
@@ -62,67 +66,10 @@ export class ShopComponent implements OnInit, AfterViewInit {
         .body.style.backgroundImage = 'url("assets/backgrounds/bg-dark.png")';
   }
 
-  buyItem(){
-
+  buyItem(name: string, itemId: number){
+    this.imageService.uploadImage(name,  this.pupil$.email).subscribe();
+    // this.pupilService.deductCoins(this.pupil$.email, itemId).subscribe();
   }
 
-  // processFile(email: string, url: string) {
-    
-  //   const file: File = this.createFile(url);
-  //   const reader = new FileReader();
-  //   reader.addEventListener('load', (event: any) => {
-      
-  //     this.imageService.uploadImage(file,  email).subscribe(
-  //       (res) => {
-  //         this.getImageFromService(res);
-  //         this.pupil$.avatarId=res.valueOf();
-  //         localStorage.UserDetails.userDetails;
-  //       },
-  //       (err) => {
-        
-  //       })
-  //   });
-
-  //   reader.readAsDataURL(file);
-
-  // }
-
-  getImageFromService(imageId: number) {
-    this.isImageLoading = true;
-    this.imageService.getImage(imageId).subscribe(data => {
-    this.createImageFromBlob(data);
-    this.isImageLoading = false;
-    }, 
-    error => {
-      this.isImageLoading = false;
-      console.log(error);
-  });
-
-}
-
-createImageFromBlob(image: Blob) {
-  let reader = new FileReader();
-  reader.addEventListener("load", () => {
-      this.img = reader.result;
-  }, false);
-
-  if (image) {
-    reader.readAsDataURL(image);
-    this.img=reader.result;
-  }
-}
-
-createFile(url: string){
-  fetch(url)
-  .then((e) => {
-   return e.blob()
-})
- .then((blob) => {
-  let b: any = blob
-  b.lastModifiedDate = new Date()
-  b.name = ''
-  return b as File
-});
-}
 
 }

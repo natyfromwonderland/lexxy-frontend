@@ -79,11 +79,9 @@ isSelected: boolean = false;
     }
 
     onItemChange(value: any){
-      let correctAnswer = this.questions[this.questionIndex].answer;
+      this.isSelected = true;
       console.log(" Value is : ", value );
-      if(value === correctAnswer){
-        this.isCorrect=true;
-      }
+      
    }
 
 }

@@ -18,21 +18,17 @@ import { LanguageService } from '../services/language.service';
 })
 export class PupilProfileComponent implements OnInit, AfterViewInit {
 
-  @Input() src: any;
-  @ViewChild('form')
   restoredSession: any;
   profileJson!: string;
   email!: string;
-  img:any;
+  img$!:string;
   username!: string;
   id!: number;
   level!: number;
   coins!: number;
   user!: AuthService["user$"];
   userDetails: Pupil;
-  imageId!: number;
-  form!: NgForm;
-  isClicked: boolean = false;
+  avatarId!: number;
   isImageLoading: boolean = false;
   leaders!: Pupil[];
 
@@ -45,6 +41,7 @@ export class PupilProfileComponent implements OnInit, AfterViewInit {
      }
 
      ngOnInit(): void {
+       
       //GET AUTHENTICATION
       this.auth.user$.subscribe(
         (profile) => {
@@ -55,6 +52,7 @@ export class PupilProfileComponent implements OnInit, AfterViewInit {
             (data) => {
                 if( data!="" && data!=null){
                 this.userDetails=data;
+                this.avatarId=data.avatarId;
                 localStorage.setItem('UserDetails', JSON.stringify(this.userDetails));
                 }
                 else{
@@ -73,16 +71,19 @@ export class PupilProfileComponent implements OnInit, AfterViewInit {
 
   
           if( this.userDetails.avatarId!=null && this.userDetails.avatarId!=0){
-            this.getImageFromService(this.userDetails.avatarId);
+              this.imageService.getImage(this.userDetails.avatarId).subscribe(
+               result => {
+                  this.img$ = result.name;
+               }
+             );
+            
           }
           this.userDetails=localStorage.UserDetails,
           this.username=localStorage.UserDetails.username,
           this.email=localStorage.UserDetails.email,
-          this.imageId=localStorage.UserDetails.imageId
+          this.avatarId=localStorage.UserDetails.avatarId,
           this.coins = localStorage.UserDetails.coins,
           this.level = localStorage.UserDetails.level
-          if(this.userDetails.avatarId!=null && this.userDetails.avatarId!=0){
-          }
           
         },
       );
@@ -92,7 +93,8 @@ export class PupilProfileComponent implements OnInit, AfterViewInit {
           this.leaders=result;
         }
       );
-  
+      console.log(this.img$);
+      console.log(this.userDetails.avatarId);
     }
 
     goToLessons(id: number){
@@ -111,31 +113,6 @@ export class PupilProfileComponent implements OnInit, AfterViewInit {
        });
        return details;
        }
-
-       getImageFromService(imageId: number) {
-        this.isImageLoading = true;
-        this.imageService.getImage(imageId).subscribe(data => {
-        this.createImageFromBlob(data);
-        this.isImageLoading = false;
-        }, 
-        error => {
-          this.isImageLoading = false;
-          console.log(error);
-      });
-  
-    }
-
-    createImageFromBlob(image: Blob) {
-      let reader = new FileReader();
-      reader.addEventListener("load", () => {
-          this.img = reader.result;
-      }, false);
-
-      if (image) {
-        reader.readAsDataURL(image);
-        this.img=reader.result;
-      }
-    }
        
   ngAfterViewInit() {
     this.elementRef.nativeElement.ownerDocument

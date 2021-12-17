@@ -14,8 +14,6 @@ import { PupilProfileComponent } from './pupil-profile/pupil-profile.component';
 import { ShopComponent } from './shop/shop.component';
 import {MatButtonModule} from '@angular/material/button';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
 import { PupilService } from './services/pupil.service';
 import { ShopItemService } from './services/shop-item.service';
 import {MatIconModule} from '@angular/material/icon'
@@ -37,6 +35,9 @@ import { NextButtonComponent } from './next-button/next-button.component';
 import { LanguageListComponent } from './language-list/language-list.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { NgxAudioPlayerModule } from 'ngx-audio-player';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -79,7 +80,8 @@ import { NgxAudioPlayerModule } from 'ngx-audio-player';
     }),
     NgbModule,
     DragDropModule,
-    NgxAudioPlayerModule
+    NgxAudioPlayerModule,
+    MatRadioModule
   ],
   providers: [PupilService, 
     {provide:HTTP_INTERCEPTORS, useClass:AuthHttpInterceptor, multi:true}],

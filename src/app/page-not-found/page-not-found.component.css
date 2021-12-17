@@ -1,0 +1,13 @@
+.container{
+    
+    position: absolute;
+    width: auto;
+    height: 200px;
+    left: 70px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(50%);
+    transform: translateY(-50%);
+    padding: 20px;
+}

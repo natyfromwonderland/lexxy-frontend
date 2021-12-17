@@ -10,13 +10,11 @@ export class AvatarService {
 
   constructor(private http: HttpClient) { }
 
-  public uploadImage(image: File, email: string): Observable<any> {
-    const multipartImage = new FormData();  
-    multipartImage.append('multipartImage', image);
-    return this.http.post(this.baseURL +email+"/image", multipartImage);
+  public uploadImage(name: string, email: string): Observable<any> {
+    return this.http.post<any>(this.baseURL +"/pupil/"+email+"/image", name);
   }
 
-  getImage(imageId: number): Observable<Blob> {
-    return this.http.get(this.baseURL +"/avatar/"+imageId, { responseType: 'blob' });
+  getImage(imageId: number): Observable<any> {
+    return this.http.get<any>(this.baseURL +"/pupil/avatar/"+imageId);
   }
 }
