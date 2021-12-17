@@ -68,7 +68,7 @@ export class ShopComponent implements OnInit, AfterViewInit {
 
   buyItem(name: string, itemId: number){
     this.imageService.uploadImage(name,  this.pupil$.email).subscribe();
-    // this.pupilService.deductCoins(this.pupil$.email, itemId).subscribe();
+    this.pupilService.deductCoins(this.pupil$.email, itemId).subscribe();
   }
 
 

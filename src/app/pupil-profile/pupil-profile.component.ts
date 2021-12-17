@@ -92,6 +92,7 @@ export class PupilProfileComponent implements OnInit, AfterViewInit {
           this.leaders=result;
         }
       );
+
       console.log(this.img$);
       console.log(this.userDetails.username);
     }
