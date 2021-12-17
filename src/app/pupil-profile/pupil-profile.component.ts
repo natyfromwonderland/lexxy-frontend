@@ -52,7 +52,6 @@ export class PupilProfileComponent implements OnInit, AfterViewInit {
             (data) => {
                 if( data!="" && data!=null){
                 this.userDetails=data;
-                this.avatarId=data.avatarId;
                 localStorage.setItem('UserDetails', JSON.stringify(this.userDetails));
                 }
                 else{
@@ -94,7 +93,7 @@ export class PupilProfileComponent implements OnInit, AfterViewInit {
         }
       );
       console.log(this.img$);
-      console.log(this.userDetails.avatarId);
+      console.log(this.userDetails.username);
     }
 
     goToLessons(id: number){
